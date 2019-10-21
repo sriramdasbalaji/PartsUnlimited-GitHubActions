@@ -20,4 +20,4 @@ jobs:
     - name: Test with dotnet
       run: dotnet test
     - name: Publish with dotnet
-      run: dotnet Publish
+      run: dotnet publish
