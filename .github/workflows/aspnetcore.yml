@@ -20,4 +20,8 @@ jobs:
     - name: Test with dotnet
       run: dotnet test
     - name: Publish with dotnet
-      run: dotnet publish
+      run: dotnet publish -c release
+    - uses: actions/upload-artifact@master
+      with:
+        name: my-artifact
+        path: /home/runner/work/PartsUnlimited-GitHubActions/PartsUnlimited-GitHubActions/src/PartsUnlimitedWebsite/bin/Release/netcoreapp2.0/publish/
