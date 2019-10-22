@@ -39,6 +39,5 @@ jobs:
         creds: ${{ secrets.AzureCredentials }}
     - name: Create or Update Resource Group
       run: |
-           az group create --name 'GitHubActionsRG' --location 'westus'
            az appservice plan create --resource-group GitHubActionsRG --name MyGHPlan --sku S1
            az webapp create --resource-group GitHubActionsRG --plan MyGHPlan --name MyGitHubactionsweb2210
