@@ -41,3 +41,8 @@ jobs:
       run: |
            az appservice plan create --resource-group GitHubActionsRG --name MyGHPlan --sku S1
            az webapp create --resource-group GitHubActionsRG --plan MyGHPlan --name MyGitHubactionsweb2210
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v1
+      with: 
+        app-name: mydotnetcoreapp # Replace with your app name
+        package: './src/PartsUnlimitedWebsite/bin/Release/netcoreapp2.0/publish/'
