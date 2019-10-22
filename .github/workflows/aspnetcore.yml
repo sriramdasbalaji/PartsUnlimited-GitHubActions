@@ -25,3 +25,20 @@ jobs:
       with:
         name: my-artifact
         path: ./src/PartsUnlimitedWebsite/bin/Release/netcoreapp2.0/publish/
+      
+  prepare-environment:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: azure/actions/login@master
+
+      with:
+
+        creds: ${{ secrets.AzureCredentials }}
+    - name: Create or Update Resource Group
+      run: |
+           az group create --name 'GitHubActionsRG' --location 'westus'
+           az appservice plan create --resource-group GitHubActionsRG --name MyGHPlan --sku S1
+           az webapp create --resource-group GitHubActionsRG --plan MyGHPlan --name MyGitHubactionsweb2210
