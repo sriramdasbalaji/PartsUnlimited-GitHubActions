@@ -38,5 +38,5 @@ jobs:
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v1
       with: 
-        app-name: mydotnetcoreapp # Replace with your app name
+        app-name: MyGitHubactionsweb2210 # Replace with your app name
         package: './src/PartsUnlimitedWebsite/bin/Release/netcoreapp2.0/publish/'
