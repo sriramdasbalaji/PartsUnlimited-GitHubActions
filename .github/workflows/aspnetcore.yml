@@ -26,12 +26,6 @@ jobs:
         name: my-artifact
         path: ./src/PartsUnlimitedWebsite/bin/Release/netcoreapp2.0/publish/
       
-  prepare-environment:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
     - uses: azure/actions/login@master
 
       with:
